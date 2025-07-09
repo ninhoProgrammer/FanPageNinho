@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import Pc from '../components/Pc.astro';
+const { title } = Astro.props;
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/MakeWeb_MM.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	
+	<body class=" text-white overflow-hidden">
+		<Header />
+		<Pc />
+		<slot />
+	</body>
+</html>
+
+<style>
+	body {
+		background: url('/image.webp') no-repeat center center fixed;
+		background-size: cover;
+	}
+</style>

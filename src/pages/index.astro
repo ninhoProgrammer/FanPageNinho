@@ -1,0 +1,51 @@
+---
+import Hero from '../components/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+import Section from '../components/Section.astro';
+import Footer from '../components/Footer.astro';
+import Extra from '../components/Extra.astro';
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="MAKE WEB">
+	<main class="relod">
+		<section id="hero" class="section bg-[url('/bg-1.webp')] bg-cover bg-center h-screen w-screen flex items-center justify-end text-white z-36 ">
+		  <Hero />
+		</section>
+	  
+		<section id="about" class="section bg-[url('/bg-2.webp')] bg-cover bg-center h-screen w-screen flex items-center justify-start text-white z-36">
+		  <About />
+		</section>
+	  
+		<section id="section" class="section h-screen w-screen flex items-center justify-center bg-white bg-[url('/background.svg')] text-black z-36">
+		  <Section />
+		</section>
+	  
+		<section id="extra" class="section bg-[url('/bg-3.webp')] bg-cover bg-center h-screen w-screen flex items-center justify-centerz-36">
+		  <Extra />
+		</section>
+	  
+		<section id="footer" class="section bg-[url('/bg-4.webp')] bg-cover bg-center h-screen w-screen items-center justify-center z-36">
+		  <Footer />
+		</section>
+	  </main>
+</Layout>
+
+<style>
+	.section {
+		transition: transform 10s ease-in-out;
+	}
+</style>
+	
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const loadingScreen = document.getElementById('loading-screen');
+		setTimeout(() => {
+			if (loadingScreen) {
+				loadingScreen.style.display = 'none';
+			}
+		}, 3000); // Cambia 3000 por la duración deseada en milisegundos
+	});
+</script>

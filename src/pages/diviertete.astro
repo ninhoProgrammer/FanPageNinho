@@ -1,0 +1,47 @@
+---
+import Header from '../components/Header.astro';
+---
+<Header />
+<div class="h-screen w-screen flex items-center justify-center text-white">
+  <canvas id="webgl-canvas"></canvas>
+  <div class="hero absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-center text-white z-10">
+    <h1 class="text-6xl font-bold mb-4">Bienvenido a la experiencia 3D!</h1>
+    <p class="text-2xl mb-8">Haz clic en cualquier parte de la pantalla para cambiar los colores</p>
+
+  </div>
+</div>
+
+<script>
+  import Grid2Background from 'threejs-components/build/backgrounds/grid2.cdn.min.js'
+
+  const bg = Grid2Background(document.getElementById('webgl-canvas'))
+
+  document.body.addEventListener('click', () => {
+    bg.grid.setColors([0xffffff * Math.random(), 0xffffff * Math.random(), 0xffffff * Math.random()])
+    bg.grid.light1.color.set(0xffffff * Math.random())
+    bg.grid.light1.intensity = 500 + Math.random() * 1000
+    bg.grid.light2.color.set(0xffffff * Math.random())
+    bg.grid.light2.intensity = 250 + Math.random() * 250
+    //bg.grid.plane.material.color.set(0xffffff * Math.random())
+  })
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #webgl-canvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+</style>
+  

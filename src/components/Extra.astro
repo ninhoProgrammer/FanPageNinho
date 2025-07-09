@@ -1,0 +1,43 @@
+<div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
+    <div class="md:w-1/2 flex justify-center items-center relative">
+        <div class="relative w-[300px] h-[300px] flex items-center justify-center">
+          
+          <!-- Imagen iluminada -->
+          <img src="/94.webp" alt="94% sin presencia en línea"
+            class="w-full h-full rounded-xl object-contain z-20 glow-neon">
+  
+          <!-- Anillo giratorio neón -->
+          <div class="absolute w-full h-full z-10 pointer-events-none spin-ring">
+            <div class="w-full h-full border-[6px] border-dotted border-violet-400 rounded-full opacity-60"></div>
+          </div>
+          
+        </div>
+      </div>
+
+    <!-- Texto -->
+    <div class="md:w-1/2 text-center md:text-left pr-20 xl:pr-0 items-center">
+      <h2 class="text-4xl font-bold mb-4">¿Sabías que el 94% de las medianas empresas no están en línea?</h2>
+      <p class="text-lg mb-6">Según la CEPAL, la mayoría aún no aprovecha el poder del mundo digital.</p>
+      <a class="inline-flex justify-center items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-300 to-purple-600 hover:from-indigo-600 hover:to-purple-300 text-white font-bold rounded-full shadow-xl transform hover:scale-105 transition duration-300" href="">
+        <span class="text-lg">¡Haz que tu empresa destaque!</span>
+        <div aria-hidden="true" class="flex items-center justify-center h-[32px] w-[32px] bg-white text-indigo-600 rounded-full ml-1 dark:bg-[#121212] dark:text-indigo-300">
+          →
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .spin-ring {
+      animation: spin 8s linear infinite;
+    }
+  
+    @keyframes spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  
+    .glow-neon {
+      filter: drop-shadow(0 0 10px #a78bfa) drop-shadow(0 0 20px #170758);
+    }
+  </style>
